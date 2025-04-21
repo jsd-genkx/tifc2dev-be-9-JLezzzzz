@@ -48,8 +48,8 @@ app.get("/books/:id", async (req, res, next) => {
       if (foundBook) {
         resolve(foundBook);
       } else {
-        const err = new Error("Book not found")
-        err.status = 404;
+        const err = new Error()
+        // err.status = 405;
         reject(err);
       }
     }, 1000); // Simulate a 1-second delay
